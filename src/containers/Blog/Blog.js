@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import classes from './Blog.module.css';
 
 class Blog extends Component {
-    // componentDidMount()
-    // {
-    //     axios.get('http://jsonplaceholder.typicode.com/posts')
-    //     .then(response=>{
-    //         console.log(response);
-    //     })
-    // }
+    componentDidMount()
+    {
+        axios.get('http://jsonplaceholder.typicode.com/posts')
+        .then(response=>{
+            console.log(response);
+            console.log('Hi');
+        })
+    }
     render () {
         return (
             <div>
