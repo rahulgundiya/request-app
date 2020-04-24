@@ -8,7 +8,8 @@ import classes from './Blog.module.css';
 class Blog extends Component {
     state={
         Post:[],
-        selectedPostId:null
+        selectedPostId:null,
+        error:false
     }
     componentDidMount()
     {
@@ -22,6 +23,10 @@ class Blog extends Component {
                 }
             })
             this.setState({Post:updatedPost})
+           
+            })
+            .catch(error=>{
+                this.setState({error:true})
            // console.log(response);
             //console.log('Hi');
         })
@@ -32,13 +37,21 @@ this.setState({selectedPostId:id});
 
     }
     render () {
-        const Posts = this.state.Post.map(post=>{
+        let Posts=<p style={{textAlign:"center"}}>
+            Please something went wrong...</p>
+        if(!this.state.error)
+        {
 
-            return <Post key={post.id} title={post.title} 
-            author={post.author}
-            clicked={()=>this.postSelectHandler(post.id)} />
-        
-        })
+             Posts = this.state.Post.map(post=>{
+
+                return <Post key={post.id} title={post.title} 
+                author={post.author}
+                clicked={()=>this.postSelectHandler(post.id)} />
+            
+            })
+            
+        }
+       
         return (
             <div>
                 <section className={classes.Posts}>
