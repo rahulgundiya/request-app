@@ -8,7 +8,7 @@ import classes from './Blog.module.css';
 class Blog extends Component {
     state={
         Post:[],
-        selectedPostId:null,
+        selectedPostId:null,  
         error:false
     }
     componentDidMount()
