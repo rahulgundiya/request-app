@@ -5,6 +5,10 @@ import App from './App';
 import axios from 'axios';
 import * as serviceWorker from './serviceWorker';
 
+axios.defaults.baseURL= "http://jsonplaceholder.typicode.com";
+axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
+axios.defaults.headers.common['Content-type']='application-json'
+
 axios.interceptors.response.use(response=>{
   console.log(response);
   return response;
