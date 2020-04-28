@@ -13,7 +13,7 @@ class Blog extends Component {
     }
     componentDidMount()
     {
-        axios.get('/posts')
+        axios.get('http://jsonplaceholder.typicode.com/posts')
         .then(response=>{
             const post = response.data.slice(0,4);
             const updatedPost = post.map(posts=>{
@@ -52,18 +52,28 @@ this.setState({selectedPostId:id});
             
         }
        
-        return (
-            <div>
-                <section className={classes.Posts}>
-                   {Posts}
-                </section>
-                <section>
-                    <FullPost id={this.state.selectedPostId} />
-                </section>
-                <section>
-                    <NewPost />
-                </section>
-            </div>
+ return (
+   <div className={classes.Blog}>
+   <header>
+       <nav>
+           <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/new-post'>NewPost</a></li>
+           </ul>
+       </nav>
+   </header>
+             
+
+     <section className={classes.Posts}>
+     {Posts}
+     </section>
+     <section>
+    <FullPost id={this.state.selectedPostId} />
+    </section>
+    <section>
+     <NewPost />
+     </section>
+     </div>
         );
     }
 }

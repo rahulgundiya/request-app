@@ -2,22 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import axios from 'axios';
+//import axios from 'axios';
 import * as serviceWorker from './serviceWorker';
 
-axios.defaults.baseURL= "http://jsonplaceholder.typicode.com";
-axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
-axios.defaults.headers.common['Content-type']='application-json'
+// axios.defaults.baseURL= "http://jsonplaceholder.typicode.com";
+// axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
+// axios.defaults.headers.common['Content-type']='application-json'
 
-axios.interceptors.response.use(response=>{
-  console.log(response);
-  return response;
+// axios.interceptors.request.use(req=>{
+//   console.log(req);
+//   return req;
 
-}
-,error=>{
-  console.log(error)
-  return Promise.reject(error);
-});
+// }
+// ,error=>{
+//   console.log(error)
+//   return Promise.reject(error);
+// });
 
 ReactDOM.render(
   <React.StrictMode>
