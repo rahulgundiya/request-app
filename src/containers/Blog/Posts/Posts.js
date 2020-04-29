@@ -44,7 +44,8 @@ if(!this.state.error)
 
      Posts = this.state.Post.map(post=>{
 
-        return( <Link to={'/' + post.id} key={post.id}><Post key={post.id} title={post.title} 
+        return( <Link to={'/' + post.id} key={post.id}>
+            <Post key={post.id} title={post.title} 
         author={post.author}
         clicked={()=>this.postSelectHandler(post.id)} /> </Link>)
     
