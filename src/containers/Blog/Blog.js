@@ -22,7 +22,7 @@ class Blog extends Component {
              exact
              activeClassName="my-active" 
              activeStyle={{color:"#fa923f",
-             textDecoration:"underline"}} >Home</NavLink></li>
+             textDecoration:"underline"}} >Posts</NavLink></li>
             <li><NavLink to={{
                 pathname:'/new-post',
                 has:'#submit',
