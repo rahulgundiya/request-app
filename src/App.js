@@ -5,11 +5,11 @@ import Blog from './containers/Blog/Blog';
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
       <div className="App">
-         <BrowserRouter>
         <Blog />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
