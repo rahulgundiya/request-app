@@ -8,7 +8,7 @@ class NewPost extends Component {
         title: '',
         content: '',
         author: 'Max',
-        submitted:false
+       submitted:false
     }
     componentDidMount()
     {
@@ -25,8 +25,8 @@ class NewPost extends Component {
         .then(response=>{
             console.log("Hi Data " ,response);
             //this.props.history.push('/posts');
-            this.props.history.replace('/posts');
-            //this.setState({submitted:true})
+            //this.props.history.replace('/posts');
+            this.setState({submitted:true})
         }) 
     }
   
@@ -39,7 +39,7 @@ class NewPost extends Component {
         return (
             
             <div className={classes.NewPost}>
-                {redirect}
+                 {redirect} 
                 <h1>Add a Post</h1>
                 <label>Title</label>
                 <input type="text" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})} />
