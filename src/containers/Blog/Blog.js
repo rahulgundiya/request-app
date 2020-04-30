@@ -6,7 +6,7 @@ import {Route ,NavLink ,Switch , Redirect} from 'react-router-dom';
 import aysncComponent from '../../hoc/asyncComponent';
 //import FullPost from './FullPost/FullPost';
 const asyncNewPost = aysncComponent(()=>{
-    return import('./NewPost/NewPost')
+    return  import('./NewPost/NewPost')
 })
 class Blog extends Component {
     state={
@@ -38,7 +38,7 @@ class Blog extends Component {
   
    <Switch>
    
-  {this.state.auth ?<Route path='/new-post'  component={asyncNewPost}/>:null }
+  {this.state.auth ?<Route path='/new-post'  component = {asyncNewPost} />:null }
    <Route path='/posts'  component={Posts}/>
     <Route render={()=><h1>Page no Found</h1>} /> 
     {/* <Redirect from="/" to="/posts" />  */}

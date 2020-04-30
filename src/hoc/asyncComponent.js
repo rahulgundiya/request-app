@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const aysncComponent=(importComponent)=>{
+const  aysncComponent = (importComponent) => {
     return class extends  Component
     {
         state={
